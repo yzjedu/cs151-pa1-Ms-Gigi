@@ -32,15 +32,17 @@ elif decision == "swim":
     confidence = float(input("Enter your confidence level to determine how well you manage (between 0.1 and 10.0): "))
 
     if confidence < 4.0:
-        print("You did not have the enough confidence and drowned. Try again.")
+        print("\nYou did not have the enough confidence and drowned. Game over. Try again.")
         exit()
     elif 4.0 <= confidence <= 10.0:
-        print("You swim skillfully and reach the other side with ease! Energized.")
+        print("\nYou swim skillfully and reach the other side with ease! Energized.")
     elif confidence > 10.0:
-        print("You were overconfident and drowned. Try again.")
+        print("\nYou were overconfident and drowned. Game over. Try again.")
         exit()
+    else:
+        print("\nInvalid input. Game over. Try again")
 else:
-    print("That is not a valid answer. You are stuck in the jungle forever. Game over. Try again.")
+    print("\nThat is not a valid answer. You are stuck in the jungle forever. Game over. Try again.")
     exit()
 
 # Prompt user for another decision
@@ -71,7 +73,7 @@ else:
         print("\nYou push aside the vines and enter the ancient temple. Inside, the air is thick with mystery. "
               "You see a large stone door with a riddle inscribed on it: 'What has keys but can't open locks?' (Type your answer)")
 
-        riddle_answer = input().lower().strip()
+        riddle_answer = input().lower().strip()   #error-checking
 
         if riddle_answer == "piano":
             print(
@@ -79,7 +81,7 @@ else:
         else:
             print(
                 "The door does not budge. You hear the sound of footsteps approaching! Do you want to hide or try to solve the riddle again? (Type 'hide' or 'solve')")
-            answer = input().lower().strip()
+            answer = input().lower().strip()        #error-checking
 
             if answer == "hide":
                 print("You are found, and you are captured. You are stuck in the jungle forever. Game over. Try again.")
@@ -90,8 +92,8 @@ else:
                 print("You decided not to hide or solve so you are captured, and you are stuck in the jungle forever. Game over. Try again.")
                 exit()
     else:
-        print("You are captured, and you are stuck in the jungle forever. Game over. Try again.")
+        print("Invalid input. You are captured, and you are stuck in the jungle forever. Game over. Try again.")
         exit()
 
-# 9. Output End game message
+# Output End game message
 print(f"\nWell-done {name}! You have successfully navigated the jungle and found the Master Key. You can now escape this magical realm!")
